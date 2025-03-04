@@ -55,6 +55,4 @@ function search(head, target):
         if temp.data == target:
             return True
         temp = temp.next
-    return False
-
-    //
+    return False    
