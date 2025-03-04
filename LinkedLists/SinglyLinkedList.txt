@@ -1,0 +1,60 @@
+
+// Insertion at the Beginning
+ffunction insertAtHead(head, value):
+// # Step 1: Create a new node with the given value
+newNode = createNode(value)
+// # Step 2: Point the new node's next to the current head
+newNode.next = head  //# The new node now points to the old head
+// # Step 3: Return the new node as the new head of the list
+return newNode  # The new node becomes the head
+
+    
+// Insertion at the end
+
+function InsertionAtTail(head, value):
+    newNode = createNode(value)
+    if head is null: 
+        return newNode // list was empty 
+    temp = head
+    while temp.next is not NULL:
+        temp = temp.next 
+    temp.next = newNode
+    return head
+
+// Deletion by vale 
+
+function deleteNode(head, value):
+    //# Step 1: Check if the list is empty
+    if head is NULL:
+        return NULL  //# If there are no nodes, nothing to delete
+
+    //# Step 2: Check if the node to delete is the head node
+    if head.data == value:  //# If the head node contains the value to delete
+        return head.next  //# Move the head to the next node, effectively deleting it
+
+   // # Step 3: Initialize a pointer to traverse the list
+    temp = head  //# Start from the head of the list
+
+   // # Step 4: Traverse the list to find the node *before* the one to delete
+    while temp.next is not NULL and temp.next.data != value:
+        temp = temp.next  //# Move forward one node at a time
+
+    //# Step 5: If the node to delete is found (temp.next is not NULL)
+    if temp.next is not NULL:
+        temp.next = temp.next.next  //# Skip over the node to delete
+
+    //# Step 6: Return the (potentially updated) head of the list
+    return head  //# The list remains the same except for the removed node
+
+
+//search for a Value
+
+function search(head, target):
+    temp = head
+    while temp is not NULL:
+        if temp.data == target:
+            return True
+        temp = temp.next
+    return False
+
+    //
