@@ -1,0 +1,51 @@
+// Insert at the head
+head = NULL
+
+function insertAtHead(value):
+    newNode = createNode(value)
+    if head is NUll:
+        head = newNode
+        return 
+    newNode.next = head
+    head.prev = newNode
+    head = newNode
+    
+// Insert at the Tail
+function insertAtTail(value):
+    newNode = createNode(value)
+    if head is NULL:
+        head = newNode
+        return
+    temp = head
+    while temp.next is not NULL:
+        temp = temp.next
+    temp.next = newNode
+    newNode.prev = temp
+
+// Delete a Node
+function deleteNode(value):
+ if head is NULL:
+    return 
+if head.data = value:
+    head = head.next
+    if head is not NULL:
+        head.prev = NUll
+    return
+temp = head
+while temp is not NULL and temp.data != value:
+    temp = temp.next
+if temp is not NULL:
+    temp.prev.next = temp.next // prev skips deleted node and moves with the other
+    if temp.next is not NULL:// prevent nunable or inaccesible data
+        temp.next.prev = temp.prev // linked between the prev node of the deleted node to the next node of the deleted node
+
+/* 
+
+Before: [10] ↔ [20] ↔ [30] ↔ [40]
+Step 1: temp.prev.next = temp.next  → [20] → [40] (skip 30)
+Step 2: temp.next.prev = temp.prev  → [20] ↔ [40] (skip 30)
+After:  [10] ↔ [20] ↔ [40] 
+
+*/
+
+//Search for a value 
