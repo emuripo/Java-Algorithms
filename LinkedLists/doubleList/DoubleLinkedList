@@ -49,3 +49,26 @@ After:  [10] ↔ [20] ↔ [40]
 */
 
 //Search for a value 
+function search(value):
+    temp = head
+    while temp is not NULL:
+        if temp.data == value:
+            return True
+        temp = temp.next
+    return False
+
+//print List in forward and Backward Direction
+function printForward():
+    temp = head
+    while temp is not NULL:\
+        print temp.data 
+        temp = temp.next
+
+//print List in Backwards
+function printBackwards():
+    temp = head
+    while temp.next is not NUll:
+        temp = next
+    while temp is not NULL:
+        print temp.data
+        temp = temp.prev 
