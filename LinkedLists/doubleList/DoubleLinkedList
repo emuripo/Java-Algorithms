@@ -60,7 +60,7 @@ function search(value):
 //print List in forward and Backward Direction
 function printForward():
     temp = head
-    while temp is not NULL:\
+    while temp is not NULL:
         print temp.data 
         temp = temp.next
 
