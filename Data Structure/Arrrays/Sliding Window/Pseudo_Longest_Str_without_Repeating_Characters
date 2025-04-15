@@ -1,0 +1,26 @@
+
+
+**Problema**: Longest substring without repeating characters.
+
+🧩 Enunciado tipo entrevista:
+
+Dado un string, encuentra la longitud de la subcadena más larga 
+que no contiene caracteres repetidos.
+
+
+
+function longestUniqueSubstring(s) {
+    crear un set 'seen' para guardar los caracteres actuales
+    inicializar puntero 'left' en 0
+    inicializar 'maxLength' en 0
+
+    recorrer s con puntero 'right':
+        mientras el caracter s[right] esta en seen:
+            eliminar s[left] del set
+            avanzar left
+        
+        agregar s[right] a seen
+        actualizar maxLength con (right - left + 1)
+
+    devolver maxLength
+}
