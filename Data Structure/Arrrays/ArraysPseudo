@@ -1,0 +1,17 @@
+// Insert Operation
+function insert(array, value, positiion):
+    if (positiion < 0 or positiion > length of array):
+        return "posicion invalida"
+    for i from end of array to positiion:
+        array[i] = array[i-1]
+    array[positiion] = value
+    increase length by 1
+
+// Delete 
+function delete(array, positiion):
+    if positiion < 0 or positiion >= length of array:
+        return posicion invalida.
+    for i from positiion to end of array -1:
+        array[i] = array[i + 1]
+    array[end of array] = null
+
